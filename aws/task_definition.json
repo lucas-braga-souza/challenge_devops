@@ -1,0 +1,41 @@
+{   
+    "family": "nginx",
+    "networkMode": "host",
+    "executionRoleArn": "arn:aws:iam::587591396374:role/ecsTaskExecutionRole",
+    "containerDefinitions":
+    [
+        {
+            "logConfiguration": {
+                "logDriver": "awslogs",
+                "options": {
+                    "awslogs-group": "nginx-logs",
+                    "awslogs-region": "us-east-1",
+                    "awslogs-stream-prefix": "docker"
+                }
+            },
+            "name": "nginx",
+            "image": "587591396374.dkr.ecr.us-east-1.amazonaws.com/nginx:latest",
+            "cpu": 256,
+            "memory": 256,
+            "links": [],
+            "portMappings": [
+                { 
+                    "hostPort": 80,
+                    "containerPort": 80,
+                    "protocol": "tcp"
+                },
+                { 
+                    "hostPort": 443,
+                    "containerPort": 443,
+                    "protocol": "tcp"
+                }
+            ],
+            "essential": true,
+            "entryPoint": [],
+            "command": [],
+            "environment": [],
+            "mountPoints": [],
+            "volumesFrom": []
+        }
+    ]
+}
