@@ -9,12 +9,12 @@
                 "logDriver": "awslogs",
                 "options": {
                     "awslogs-group": "nginx-logs",
-                    "awslogs-region": "us-east-1",
+                    "awslogs-region": "sa-east-1",
                     "awslogs-stream-prefix": "docker"
                 }
             },
             "name": "nginx",
-            "image": "587591396374.dkr.ecr.us-east-1.amazonaws.com/nginx:latest",
+            "image": "587591396374.dkr.ecr.sa-east-1.amazonaws.com/nginx:latest",
             "cpu": 256,
             "memory": 256,
             "links": [],
